@@ -6,9 +6,26 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import 'leaflet/dist/leaflet.css';
+
+import L from 'leaflet';
+import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
+import markerIcon from 'leaflet/dist/images/marker-icon.png';
+import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+
+// delete L.Icon.Default.prototype._getIconUrl;
+// L.Icon.Default.mergeOptions({
+//     iconUrl: markerIcon.src,
+//     iconRetinaUrl: markerIcon2x.src,
+//     shadowUrl: markerShadow.src,
+// })
 
 
 export default function Home() {
+  // const url =
+  //   "https://data.police.uk/api/crimes-street/all-crime?lat=52.629729&lng=-1.131592&date=2019-10";
+  // const { data, error } = useSwr(url, { fetcher });
+  // const crimes = data && !error ? data.slice(0, 100) : [];
   return (
     <div className="grid grid-cols-1 md:grid-cols-[minmax(300px,400px)_1fr] h-screen w-full">
       <div className="bg-background p-6 space-y-6">
@@ -42,11 +59,7 @@ export default function Home() {
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={[51.505, -0.09]}>
-              <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
-              </Popup>
-            </Marker>
+   
           </MapContainer>
         </div>
       </div>
